@@ -726,7 +726,7 @@ function sendOTP(){
   btn.textContent='Sending...'; btn.disabled=true;
   gtag('event','otp_requested',{sim:'CDO-SIM-3-Target'});
   emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
-    to_name: name, to_email: email, otp_code: state.otp,
+    to_name: name, to_email: email, otp: state.otp,
     sim_name: 'CDO SIM 3 — Target', sim_topic: 'Governance, Ethics & Compliance'
   }).then(()=>{
     document.getElementById('otp-email-display').textContent = email;
