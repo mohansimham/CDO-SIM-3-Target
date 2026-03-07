@@ -727,7 +727,8 @@ function sendOTP(){
   gtag('event','otp_requested',{sim:'CDO-SIM-3-Target'});
   emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
     to_name: name, to_email: email, otp: state.otp,
-    sim_name: 'CDO SIM 3 — Target', sim_topic: 'Governance, Ethics & Compliance'
+    sim_name: 'CDO SIM 3 — Target', sim_topic: 'Governance, Ethics & Compliance',
+    message: `Hi ${name},\n\nYour CXO Simulabs verification code for CDO SIM 3 (Target) is:\n\n${state.otp}\n\nThis code expires in 10 minutes. Do not share it with anyone.\n\n— CXO Simulabs Team\ncxosimulabs.com`
   }).then(()=>{
     document.getElementById('otp-email-display').textContent = email;
     showPhase('otp');
